@@ -48,8 +48,11 @@ Page {
             }
             Label {
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: qsTr("Author: ") + "nightmare"
+                text: "<html><center><p>"+qsTr("Author: ") + " nightmare</p><p><a href=\"https://github.com/nightmare2105/SailBottle\">"+qsTr("view sourcecode on github")+"</a></p><center><html>"
                 color: Theme.highlightColor
+                textFormat: Text.RichText
+                horizontalAlignment: Text.AlignHCenter
+                onLinkActivated: Qt.openUrlExternally(link)
                 //font.pixelSize: Theme.fontSizeLarge
             }
 

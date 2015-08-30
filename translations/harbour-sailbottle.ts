@@ -65,6 +65,10 @@
         <source>Image-Source: </source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>view sourcecode on github</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>volume</name>

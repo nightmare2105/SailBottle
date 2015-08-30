@@ -65,6 +65,10 @@
         <source>Image-Source: </source>
         <translation>Bild-Quelle: </translation>
     </message>
+    <message>
+        <source>view sourcecode on github</source>
+        <translation>Quellcode auf Github ansehen</translation>
+    </message>
 </context>
 <context>
     <name>volume</name>
