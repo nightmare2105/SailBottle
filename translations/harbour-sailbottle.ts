@@ -46,6 +46,10 @@
         <source>enter liquor volume in ml</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Infinity</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>about</name>

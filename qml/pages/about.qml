@@ -58,7 +58,7 @@ Page {
 
             Label {
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: qsTr("Version: ")+"0.1"
+                text: qsTr("Version: ")+"0.2"
                 color: Theme.highlightColor
                 //font.pixelSize: Theme.fontSizeLarge
             }

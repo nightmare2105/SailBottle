@@ -46,6 +46,10 @@
         <source>enter liquor volume in ml</source>
         <translation>Sprituosen-Volumen in ml</translation>
     </message>
+    <message>
+        <source>Infinity</source>
+        <translation>Unendlich</translation>
+    </message>
 </context>
 <context>
     <name>about</name>
@@ -95,10 +99,6 @@
     <message>
         <source>calculate abv in dilution</source>
         <translation>Berechne Alkoholgehalt</translation>
-    </message>
-    <message>
-        <source>Dilution: </source>
-        <translation type="vanished">Verdünnung:</translation>
     </message>
     <message>
         <source>Dilution</source>

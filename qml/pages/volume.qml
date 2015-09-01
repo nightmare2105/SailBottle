@@ -52,12 +52,6 @@ Page {
         var abv1=liquid1Slider.value;
         var abv2=liquid2Slider.value;
         var result=0;
-        if(vol1==null){
-            vol1=0*1;
-        }
-        if(vol2==null){
-            vol2=0*1;
-        }
 
         if(vol2==0)
         {

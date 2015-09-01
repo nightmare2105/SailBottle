@@ -13,11 +13,11 @@ Name:       harbour-sailbottle
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    SailBottle
-Version:    0.1
+Version:    0.2
 Release:    1
 Group:      Qt/Qt
-License:    LICENSE
-URL:        http://example.org/
+License:    LGPL 2.1
+URL:        https://github.com/nightmare2105/SailBottle
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-sailbottle.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9
@@ -28,7 +28,7 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  desktop-file-utils
 
 %description
-Short description of my SailfishOS Application
+Liquor dilution calculator
 
 
 %prep
@@ -63,7 +63,8 @@ desktop-file-install --delete-original       \
 
 %files
 %defattr(-,root,root,-)
-%{_bindir}
+%defattr(644,root,root,-)
+%attr(655,-,-) %{_bindir}
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/86x86/apps/%{name}.png

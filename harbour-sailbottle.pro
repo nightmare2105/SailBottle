@@ -19,7 +19,6 @@ SOURCES += src/harbour-sailbottle.cpp
 OTHER_FILES += qml/harbour-sailbottle.qml \
     qml/cover/CoverPage.qml \
     qml/pages/FirstPage.qml \
-    rpm/harbour-sailbottle.changes.in \
     rpm/harbour-sailbottle.spec \
     rpm/harbour-sailbottle.yaml \
     translations/*.ts \
@@ -29,7 +28,8 @@ OTHER_FILES += qml/harbour-sailbottle.qml \
     qml/pages/about.qml \
     qml/bottle-small.png \
     qml/drop-small.png \
-    translations/harbour-sailbottle-de.qm
+    translations/harbour-sailbottle-de.qm \
+    rpm/harbour-sailbottle.changes
 
 # to disable building translations every time, comment out the
 # following CONFIG line
