@@ -116,7 +116,7 @@ Page {
                 minimumValue : 0
                 stepSize:0.1
                 onSliderValueChanged: sliderValue + qsTr("% abv")
-                onValueChanged: {
+                onReleased: {
                     liquid1Slider._updateValueToDraggable()
                     calcABV();
                 }
@@ -165,7 +165,7 @@ Page {
                 minimumValue : 0
                 stepSize:0.1
                 onSliderValueChanged: sliderValue + qsTr("% abv")
-                onValueChanged: {
+                onReleased: {
                     liquid2Slider._updateValueToDraggable()
                     calcABV();
                 }

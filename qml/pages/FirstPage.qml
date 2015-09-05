@@ -51,7 +51,7 @@ Page {
         var result
         var result2
 
-        if(liquid1Slider.value==liquid2Slider.value){
+        if(liquid1Slider.value==liquid2Slider.value||liquid1Volume.text==""){
 
             liquid3Slider.maximumValue=100;
             liquid3Slider.minimumValue=0;
@@ -65,22 +65,25 @@ Page {
         {
             liquid3Slider.enabled=true;
             liquid3Slider.handleVisible=true;
-            liquid3Slider.maximumValue=Math.max(liquid1Slider.sliderValue,liquid2Slider.value);
-            liquid3Slider.minimumValue=Math.min(liquid1Slider.sliderValue,liquid2Slider.value);
+            liquid3Slider.maximumValue=101;//avoid Warning min>max when setting new min+max
+            liquid3Slider.minimumValue=-1; //avoid Warning min>max when setting new min+max
+            liquid3Slider.maximumValue=Math.max(liquid1Slider.value,liquid2Slider.value);
+            liquid3Slider.minimumValue=Math.min(liquid1Slider.value,liquid2Slider.value);
             if(liquid3Slider.value>liquid3Slider.maximumValue)
             {
-                liquid3Slider.value=liquid3Slider.maximumValue;
+                liquid3Slider.value=Math.round((liquid3Slider.minimumValue+liquid3Slider.maximumValue)/2*10)/10;
             }
 
             if(liquid3Slider.value<liquid3Slider.minimumValue)
             {
-                liquid3Slider.value=liquid3Slider.minimumValue;
+                liquid3Slider.value=Math.round((liquid3Slider.minimumValue+liquid3Slider.maximumValue)/2*10)/10;
             }
 
             var vol1=liquid1Volume.text*1;
             var abv1=liquid1Slider.value;
             var abv2=liquid2Slider.value;
             var abv3=liquid3Slider.value;
+
 
             result=((vol1*abv1)-(vol1*abv3))/(abv3-abv2)
             if(result==Infinity)
@@ -90,12 +93,18 @@ Page {
             }
             else
             {
-                result=Math.round(result*10)/10;
-                result2=Math.round(result/vol1*10)/10;
+
+                    result=Math.round(result*10)/10;
+                    result2=Math.round(result/vol1*10)/10;
             }
+
+        }
+        if(isNaN(result2)||isNaN(result))
+        {
+            result2="-"
+            result="-"
         }
 
-        liquid3Slider._updateHighlightToValue();
         resultLabel.text=qsTr("Solvent")+": "+result+qsTr(" ml");
         ratioLabel.text="1 : "+result2;
         app.result="<html><center><p>"+qsTr("Solvent")+":</p><p>"+result+qsTr(" ml")+"</p><p>"+"1 : "+result2+"</p></center></html>";
@@ -148,7 +157,7 @@ Page {
                 minimumValue : 10
                 stepSize:0.1
                 onSliderValueChanged: sliderValue + qsTr("% abv")
-                onValueChanged: {
+                onReleased: {
                     //  liquid1Slider._updateValueToDraggable()
                     calcABV();
                 }
@@ -195,7 +204,7 @@ Page {
                 maximumValue:100
                 minimumValue : 0
                 stepSize:0.1
-                onValueChanged: {
+                onReleased: {
                     // liquid2Slider._updateValueToDraggable()
                     calcABV();
                 }
@@ -230,8 +239,7 @@ Page {
                 minimumValue: Math.min(liquid1Slider.value,liquid2Slider.value)+1
                 stepSize:0.1
                 onSliderValueChanged: sliderValue + qsTr("% abv")
-                onValueChanged: {
-                    //liquid3Slider._updateValueToDraggable()
+                onReleased: {
                     calcABV();
                 }
             }
