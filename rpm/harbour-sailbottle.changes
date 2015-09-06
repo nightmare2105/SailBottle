@@ -9,12 +9,11 @@
 # - Summary of changes
 
 * Sat Sep 05 2015 nightmare <nightsoft@outlook.com> 0.3-1
-- removed Slider._updateHandletoValue,
-    not supported by Sailfish 2.0 1.1.9.27
+- adaptations for Sailfish 2.0 1.1.9.27
 - improved invalid value handling
 
 * Tue Sep 01 2015 nightmare <nightsoft@outlook.com> 0.2-1
 - updated licence information
 - fixed bug: Dilution-slider has invalid value
-    when Liquor.abv==Solvent.abv
+    if Liquor.abv==Solvent.abv
 - fixed bug: Ratio ":" - wrong colour
